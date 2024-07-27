@@ -23,9 +23,11 @@ router.get('/auth/login', (req, res) => {
 
 
 router.post('/submit', (req, res) => {
-    if ('username' in req.body) {
+    console.log(req.body);
+    if ('username' in req.body && !('inc' in req.body)) {
         return controller.loginPost(req, res);
     } else if ('inc' in req.body) {
+        console.log("incorrect");
         return controller.loginPost2(req, res);
     } else if ('fullName' in req.body) {
         return controller.loginPost3(req, res);
